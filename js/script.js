@@ -17,11 +17,11 @@ let scrollhandler = ()=>{
     window.addEventListener("scroll" ,scrollhandler)
 
 
-localStorage.setItem ("Mahmoud" , "01155162065")
-console.log(localStorage.getItem("Mahmoud"))
-localStorage.removeItem("Mahmoud")
+// localStorage.setItem ("Mahmoud" , "01155162065")
+// console.log(localStorage.getItem("Mahmoud"))
+// localStorage.removeItem("Mahmoud")
 
-localStorage.clear() 
+// localStorage.clear() 
 // the last code clear all the data in the local storage 
 
 
