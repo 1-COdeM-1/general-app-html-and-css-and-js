@@ -1,0 +1,53 @@
+.nav-bar:hover {
+        background: linear-gradient(to left, #b266f9a2, #f9a8d4); /* reversed */
+
+    }
+.scrollbar-custom::-webkit-scrollbar{
+  width: 10px;    
+  /* display: none; */
+}
+.scrollbar-custom::-webkit-scrollbar-track{
+  background-color: rgb(178, 114, 177);         /* لون المسار الخلفي */
+  border-radius: 40px;
+  
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb{
+    background: linear-gradient(to bottom, #b506d4, #b11d58); /* لون المقبض */
+  border-radius: 20px;
+  border: 2px solid #111;    /* يعمل padding وهمي */
+}
+.fontinput{
+        font-family: "Kaushan Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+    }
+@media (max-width : 900px) {
+  
+  
+  .the-nav-phone a{
+    font-size: 20px;
+  }
+  .logo{
+    display: none;
+  }
+  .registration { 
+    display: none;
+  }
+  .logo-sign-phone{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .regist-phone a{
+    font-size: 16px;
+    
+  }
+  .regist-phone {
+    width: 30%;
+    margin-top: 10px;
+  }
+  .logo-phone{
+    align-self: flex-start;
+  }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>log-in page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gravitas+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single&display=swap" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/heroicons-css@0.1.1/heroicons.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet"><style>
+    .log-in{
+        font-family: "Kaushan Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+    }
+    .fontinput{
+        font-family: "Kaushan Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+    }
+    .submit:hover{
+        opacity: .6;
+    }
+</style>
+<body>
+    <section class="section1 h-screen w-full bg-gradient-to-b from-purple-200/70 to-pink-300/60 border-2">
+        <p class="italic text-[70px] text-center mt-[3px] log-in animate__animated animate__bounce">log-in</p>
+        <div class="rectangle w-[500px] h-[700px] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-purple-500/50 to-pink-500/70 rounded-[25px] flex flex-col justify-aroun">
+            <div class="bg-white h-[650px] w-[450px] mx-auto my-auto border-black border-2 border-solid rounded-[20px]">
+                <form action="">
+                    <input type="email" placeholder="Enter your email " style="outline: none;" required class="mt-[100px] w-[390px] h-[45px] text-xl mx-[30px] rounded-[15px] px-2 border-solid border-blue-700 border-[1px] focus:scale-110 hover:scale-110  fontinput" id="enterEmail">
+                    <input type="password" placeholder="Enter your password " style="outline: none;" required class="mt-[70px] w-[390px] h-[45px] text-xl mx-[30px] rounded-[15px] px-2 border-solid border-blue-700 border-[1px] focus:scale-110 hover:scale-110 fontinput" id="enterPassword"> 
+                    <input type="checkbox" class="mt-[30px] ml-[35px] mr-[10px]" > <span class="text-xl fontinput ">save your registration</span>
+                    <div class="buttons mt-[100px] text-center">
+                        <input type="submit" value="log-in" class="border-2 text-xl w-[160px] h-[40px] bg-sky-500 text-white rounded-[10px] fontinput submit" id="submit" >
+                    </div>
+                    <p class="text-center mt-[20px]"><a href="#" class="text-blue-600 underline text-center text-[18px] fontinput">forget your password</a></p>
+                    <p class="text-center mt-[80px]"><a href="register.html" class=" text-blue-600 underline text-center text-[18px] fontinput">don't have an account? <span class="text-2xl">sign-up</span></a></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
