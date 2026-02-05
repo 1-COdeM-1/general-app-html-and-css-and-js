@@ -80,3 +80,33 @@
     }
 }
 
+
+/* ///////////////////////////////////////////////////////////////////////////////////// */
+/* section3 */
+.section3-last-hr{
+  width : 90%; 
+  border: none;
+  border-top: 2px solid #000000; /* blue color */
+  margin-left: 5%;
+  margin-top: 15px;
+}
+@media (max-width : 900px){
+  .section3-container{
+  flex-direction: column;
+  align-items: center;
+}
+.section3-hr{
+  display: block;
+  width: 90%;
+  border: none;
+  border-top: 1px solid #000000; /* blue color */
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+.section3-last-hr{
+  width: 100%;
+  margin-left: 0;
+}
+}
+
+
