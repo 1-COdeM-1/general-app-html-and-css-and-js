@@ -22,6 +22,12 @@
   font-weight: 400;
   font-style: normal;
     }
+
+  
+
+
+
+
 @media (max-width : 900px) {
   
   
@@ -50,4 +56,26 @@
   .logo-phone{
     align-self: flex-start;
   }
+}
+
+@media (max-width : 700px){
+     .br-hidden-section1{
+      display: block;
+     }
+    .section1-text-buttons{
+      flex-direction: column;
+      align-items: center;
+    
+    }
+     .section1-text-lorem{
+      overflow: hidden;
+     }
+    .section1-text-buttons div{
+      margin-top: 10px;
+      margin-left: 0;
+    }
+    .registphoneSpan{
+      font-size: 15px;
+      
+    }
 }

@@ -33,7 +33,7 @@ if(localStorage.getItem("username") !== ""){
         registration.style.fontSize = "20px"
         registration.style.textAlign = "center"
         registphoneSpan.textContent = localStorage.getItem("username")
-        registphoneSpan.style.fontSize = "20px"
+        // registphoneSpan.style.fontSize = "20px"
         registphoneSpan.style.textAlign = "center"
         
         registrationplogout.style.display = "block"
