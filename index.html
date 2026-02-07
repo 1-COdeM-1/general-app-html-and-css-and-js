@@ -23,7 +23,13 @@
 
     <div class= " hidden logo-sign-phone relative z-20">
         <div class="logo-phone text-4xl text-center pt-[15px] fontinput ml-[50px]"><a href="index.html">perfume</a></div>
-
+        <div class="relative phone-cart mt-[21px] hidden">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                </svg>
+                <div class="rounded-full w-[20px] h-[20px] bg-red-700 absolute top-[14px] left-[19px]"></div>
+            </div>
     <div class="regist-phone  w-[400px] mr-[50px] bg-blue-500 h-[60px] my-auto rounded-[20px] bg-gradient-to-l from-purple-400 to-pink-300">
             <ul class="regist-phone-ul flex justify-around items-center h-full">
                 <li class="hover:scale-[1.3] hover:text-rose-600" ><a href="log-in.html" class="text-2xl ">log-in</a></li>
@@ -34,8 +40,8 @@
             <p class="regist-phone-p-logout hidden  absolute top-[31px] left-1/2 -translate-x-1/2"><a href="index.html" class="text-[18px] text-red-600 hover:underline ">Log-out</a></p>
         </div>
     </div>
-    <nav class= "nav-computer the-nav-phone border-inherit border-[1px] nav-bar fixed h-[70px]  w-11/12 left-1/2 -translate-x-1/2 bg-gradient-to-l z-[20] from-purple-300 to-pink-300 hover:scale-[1.01]   rounded-[15px] flex justify-between hover:opacity-100 ">
-        <div class="logo text-4xl text-center pt-[15px] fontinput ml-[50px]"><a href="index.html">perfume</a></div>
+    <nav class= "nav-computer the-nav-phone border-inherit border-[1px] nav-bar fixed h-[70px]  w-11/12 left-1/2 -translate-x-1/2 bg-gradient-to-l z-[20] from-purple-300 to-pink-300 hover:scale-[1.01]   rounded-[15px] flex justify-around hover:opacity-100 ">
+        <div class="logo text-4xl text-center pt-[12px] fontinput ml-[25px]"><a href="index.html">perfume</a></div>
         <div class="w-[650px] h-[60px] my-auto">
             <ul class="flex justify-around items-center h-full">
                 <li class="hover:scale-[1.3] hover:text-rose-600 fontinput "><a href="index.html" class="text-xl">Home</a></li>
@@ -44,7 +50,7 @@
                 <li class="hover:scale-[1.3] hover:text-rose-600 fontinput "><a href="#" class="text-xl">Contact Us</a></li>
             </ul>
         </div>
-        <div class="registration w-[400px] mr-[50px] bg-blue-500 h-[60px] my-auto rounded-[20px] bg-gradient-to-l from-purple-400 to-pink-300 relative">
+        <div class="registration w-[400px] mr-[0px] bg-blue-500 h-[60px] my-auto rounded-[20px] bg-gradient-to-l from-purple-400 to-pink-300 relative">
             <ul class="registration-computer-ul flex justify-around items-center h-full">
                 <li class="hover:scale-[1.3] hover:text-rose-600" ><a href="log-in.html" class="text-2xl fontinput">log-in</a></li>
                 <p class=" text-4xl" >|</p>
@@ -52,7 +58,14 @@
             </ul>
             <span class="registration-span-name fontinput"></span>
             <p class="hidden registration-p-logout absolute top-[31px] left-1/2 fontinput -translate-x-1/2"><a href="index.html" class="text-[18px] text-red-600 hover:underline fontinput">Log-out</a></p>
-
+            
+        </div>
+        <div class="relative hidden computer-cart mt-[15px]">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                </svg>
+                <div class="rounded-full w-[20px] h-[20px] bg-red-700 absolute top-[14px] left-[19px]"></div>
         </div>
     </nav>
 <section class="section1 h-screen w-full bg-[url(images/3.jpg)] bg-cover bg-center opacity-100 absolute z-[10] relative">
@@ -82,9 +95,7 @@
             </div>
         </div>
         <div class="section2-products grid sm:grid-cols-1 sm:grid-rows-1 min-920px:grid-cols-2 min-1400px:grid-cols-3  gap-y-8  min-920px:gap-y-12 min-1400px:gap-y-16 w-11/12 mx-auto">
-            <div class=" w-11/12 mx-auto vsm:w-[400px] sm:w-[500px]  md:w-[475px] min-920px:w-[405px] h-[550px] bg-blue-500">
-                
-            </div>
+            <div class=" w-11/12 mx-auto vsm:w-[400px] sm:w-[500px]  md:w-[475px] min-920px:w-[405px] h-[550px] bg-blue-500"></div>
             <div class=" w-11/12 mx-auto vsm:w-[400px] sm:w-[500px]  md:w-[475px] min-920px:w-[405px] h-[550px] bg-blue-500"></div>
             <div class=" w-11/12 mx-auto vsm:w-[400px] sm:w-[500px]  md:w-[475px] min-920px:w-[405px] h-[550px] bg-blue-500"></div>
         </div>

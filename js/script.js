@@ -17,6 +17,7 @@ let scrollhandler = ()=>{
 window.addEventListener("scroll" ,scrollhandler)
 
 
+
 const registration = document.querySelector(".registration")
 const registrationComputerUl = document.querySelector(".registration-computer-ul")
 const registphoneul = document.querySelector(".regist-phone-ul")
@@ -25,6 +26,8 @@ const registphoneSpan = document.querySelector(".registphoneSpan")
 let textLogOutphone = document.querySelector(".regist-phone-p-logout")
 let registrationspanname = document.querySelector(".registration-span-name")
 let registrationplogout =document.querySelector(".registration-p-logout")
+let computerCart = document.querySelector(".computer-cart")
+let phoneCart = document.querySelector(".phone-cart")
 if(localStorage.getItem("username") !== ""){
     (function (){
         registrationComputerUl.style.display = "none";
@@ -42,8 +45,26 @@ if(localStorage.getItem("username") !== ""){
         registphone.style.position = "relative"
         registphone.style.flexDirection = "column"
         textLogOutphone.style.display = "block"
+
+        computerCart.style.display = "block"
+
+        phoneCart.style.display = "block"
     })()
 }
+
+let hidecomputercart = ()=>{
+    wWindow = window.innerWidth
+    if(wWindow < 900){
+        computerCart.style.display = "none"
+    }else{
+        (function () {
+            if(localStorage.getItem("username") !== "") return computerCart.style.display = "block"
+            else return computerCart.style.display = "none"
+        }) ()
+    }
+}
+window.addEventListener("resize" , hidecomputercart)
+
 textLogOutphone.addEventListener("click" , ()=>{
     localStorage.clear()
     location.reload()
