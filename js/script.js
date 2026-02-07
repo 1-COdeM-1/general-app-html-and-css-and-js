@@ -64,4 +64,14 @@ registrationplogout.addEventListener("click" , ()=>{
 // localStorage.clear() 
 // the last code clear all the data in the local storage 
 
-
+tailwind.config = {
+  theme: {
+    extend : {
+        screens: {
+      'vsm' : '400px',
+      'min-920px' : '920px' ,
+      'min-1400px' : '1400px'
+    },
+    }
+  }
+}
