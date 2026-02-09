@@ -169,7 +169,7 @@ let drawItems = function(){
                             <p class="text-xl opacity-60">category :${item.category}</p>
                         </h1>
                         <div class="rounded-full h-[120px] w-[120px] border-2 border-pink-500 mx-auto text-center text-3xl py-[40px] ">${item.price} $</div>
-                        <button class="bg-cyan-600 hover:bg-red-600 w-[180px] text-center rounded-[10px] h-[30px] text-xl fontinput text-white ">Add to Cart </button>
+                        <button class="bg-cyan-600 hover:bg-red-600 w-[180px] text-center rounded-[10px] h-[30px] text-xl fontinput text-white addButton">Add to Cart </button>
                     </div>
                 </div>
             </div>
@@ -179,6 +179,20 @@ let drawItems = function(){
 }
  drawItems ()
 
+
+
+let allClickButtons = document.querySelectorAll(".addButton")
+let counterCart  = document.querySelectorAll(".counter-cart")
+let counterForCart = 0 ;
+let clickaddButton = function(){
+    counterForCart +=1
+    counterCart.forEach(item =>{
+        item.textContent = counterForCart
+    })
+}
+allClickButtons.forEach(item =>{
+   item.addEventListener("click" , clickaddButton)
+})
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
 
