@@ -85,6 +85,103 @@ registrationplogout.addEventListener("click" , ()=>{
 // localStorage.clear() 
 // the last code clear all the data in the local storage 
 
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+let products = [
+    
+    {
+        id : "product1",
+        name : "coco gold perfume", 
+        image : "url(images/4.jpg)",
+        category : "brown" , 
+        price : 100
+    },
+    {
+        id : "product2",
+        name : "zara blue perfume" , 
+        image : "url(images/5.jpg)",
+        category : "blue" , 
+        price : 100
+    },
+    {
+        id : "product3",
+        name : "lare gold perfume" ,
+        image : "url(images/6.jpg)", 
+        category : "gold" , 
+        price : 100
+    },
+    {
+        id : "product4",
+        name : "varsace perfume" , 
+        image : "url(images/7.jpg)",
+        category : "blue" , 
+        price : 100
+    },
+    {
+        id : "product5",
+        name : "coco yellow perfume" , 
+        image : "url(images/8.jpg)",
+        category : "gold" , 
+        price : 100
+    },
+    {
+        id : "product6",
+        name : "CoCo black perfume ", 
+        image : "url(images/9.jpg)",
+        category : "black" , 
+        price : 100
+    },
+    {
+        id : "product7",
+        name : "Allure perfume" , 
+        image : "url(images/10.jpg)",
+        category : "blue" , 
+        price : 100
+    },
+    {
+        id : "product8",
+        name : "valantenu perfume" , 
+        image : "url(images/11.jpg)",
+        category : "red" , 
+        price : 100
+    }
+]
+
+
+
+const chooseCategory = document.getElementById("chooseCategory")
+let searchButton = document.getElementById("searchButton")
+let searchInput = document.getElementById("searchInput")
+let allproducts = document.querySelector(".allproducts")
+
+let drawItems = function(){
+    let y = products.map((item) => {
+       
+      return  `
+        <div class=" w-11/12 mx-auto vsm:w-[400px] sm:w-[500px]  md:w-[475px] min-920px:w-[405px] h-[550px]     rounded-[25px] border-2 border-pink-400 hover:scale-[1.03] hover:border-pink-500   product ${item.id}">
+                <div class="w-11/12 mx-auto flex flex-col h-[540px] mt-[10px] justify-around">
+                    <div class="bg-[${item.image}] bg-cover bg-center h-[280px] w-full rounded-[20px]"></div>
+                    <div class="flex flex-col justify-around items-center h-[260px] w-full" >
+                        <h1 class="fontinput text-2xl text-center  " >${item.name}
+                            <p class="text-xl opacity-60">category :${item.category}</p>
+                        </h1>
+                        <div class="rounded-full h-[120px] w-[120px] border-2 border-pink-500 mx-auto text-center text-3xl py-[40px] ">${item.price}</div>
+                        <button class="bg-cyan-600 hover:bg-red-600 w-[180px] text-center rounded-[10px] h-[30px] text-xl fontinput text-white ">Add to Cart </button>
+                    </div>
+                </div>
+            </div>
+        `
+    })
+    allproducts.innerHTML = y.join('');
+}
+ drawItems ()
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 tailwind.config = {
   theme: {
     extend : {
@@ -96,3 +193,5 @@ tailwind.config = {
     }
   }
 }
+
+ 
