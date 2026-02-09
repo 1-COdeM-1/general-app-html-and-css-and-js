@@ -97,56 +97,56 @@ let products = [
         name : "coco gold perfume", 
         image : "url(images/4.jpg)",
         category : "brown" , 
-        price : 100+"$"
+        price : 100
     },
     {
         id : "product2",
         name : "zara blue perfume" , 
         image : "url(images/5.jpg)",
         category : "blue" , 
-        price : 100+"$"
+        price : 100
     },
     {
         id : "product3",
         name : "lare gold perfume" ,
         image : "url(images/6.jpg)", 
         category : "gold" , 
-        price : 100+"$"
+        price : 100
     },
     {
         id : "product4",
         name : "varsace perfume" , 
         image : "url(images/7.jpg)",
         category : "blue" , 
-        price : 100+"$"
+        price : 100
     },
     {
         id : "product5",
         name : "coco yellow perfume" , 
         image : "url(images/8.jpg)",
         category : "gold" , 
-        price : 100+"$"
+        price : 100
     },
     {
         id : "product6",
         name : "CoCo black perfume ", 
         image : "url(images/9.jpg)",
         category : "black" , 
-        price : 100+"$"
+        price : 100
     },
     {
         id : "product7",
         name : "Allure perfume" , 
         image : "url(images/10.jpg)",
         category : "blue" , 
-        price : 100+"$"
+        price : 100
     },
     {
         id : "product8",
         name : "valantenu perfume" , 
         image : "url(images/11.jpg)",
         category : "red" , 
-        price : 100+"$"
+        price : 100
     }
 ]
 
@@ -168,7 +168,7 @@ let drawItems = function(){
                         <h1 class="fontinput text-2xl text-center  " >${item.name}
                             <p class="text-xl opacity-60">category :${item.category}</p>
                         </h1>
-                        <div class="rounded-full h-[120px] w-[120px] border-2 border-pink-500 mx-auto text-center text-3xl py-[40px] ">${item.price}</div>
+                        <div class="rounded-full h-[120px] w-[120px] border-2 border-pink-500 mx-auto text-center text-3xl py-[40px] ">${item.price} $</div>
                         <button class="bg-cyan-600 hover:bg-red-600 w-[180px] text-center rounded-[10px] h-[30px] text-xl fontinput text-white ">Add to Cart </button>
                     </div>
                 </div>
