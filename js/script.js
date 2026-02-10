@@ -212,9 +212,30 @@ const query = searchInput.value.trim().toLowerCase()
         allproducts.innerHTML = `<p class="text-center text-2xl ">No products found</p>`
     }
 }
-if(chooseCategory.value.trim().toLowerCase() === "search by product name"){
-    searchButton.addEventListener("click" , choosingbyName)
+
+let choosingbycategory = function(){
+    const query = searchInput.value.trim().toLowerCase()
+    if(query === ""){
+        drawItems(products)
+        return
+    }else if(products.some((item)=>item.category.toLowerCase().includes(query))){
+        let filteredproductbycategory = products.filter((item)=>item.category.toLowerCase().includes(query))
+        drawItems(filteredproductbycategory)
+    }else{
+        allproducts.innerHTML = `<p class="text-center text-2xl ">No products found</p>`
+    }
 }
+let searchingproducts = function(){
+    if(chooseCategory.value.trim().toLowerCase() === "search by product name"){
+    choosingbycategory()
+}else if(chooseCategory.value.trim().toLowerCase() === "search by product category"){
+    choosingbycategory()
+}
+
+}
+searchButton.addEventListener("click" , searchingproducts)
+
+
 
 
 
