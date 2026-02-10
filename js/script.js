@@ -152,13 +152,11 @@ let products = [
 
 
 
-const chooseCategory = document.getElementById("chooseCategory")
-let searchButton = document.getElementById("searchButton")
-let searchInput = document.getElementById("searchInput")
+
 let allproducts = document.querySelector(".allproducts")
 
-let drawItems = function(){
-    let y = products.map((item) => {
+let drawItems = function(theThing){
+    let y = theThing.map((item) => {
        
       return  `
         <div class=" w-11/12 mx-auto vsm:w-[400px] sm:w-[500px]  md:w-[475px] min-920px:w-[405px] h-[550px]     rounded-[25px] border-2 border-pink-400 hover:scale-[1.03] hover:border-pink-500   product ${item.id}">
@@ -177,7 +175,7 @@ let drawItems = function(){
     })
     allproducts.innerHTML = y.join('');
 }
- drawItems ()
+ drawItems (products)
 
 
 
@@ -193,6 +191,33 @@ let clickaddButton = function(){
 allClickButtons.forEach(item =>{
    item.addEventListener("click" , clickaddButton)
 })
+
+
+
+
+const chooseCategory = document.getElementById("chooseCategory")
+let searchButton = document.getElementById("searchButton")
+let searchInput = document.getElementById("searchInput")
+let productclass = document.querySelector(".product")
+let choosingbyName = function(){
+const query = searchInput.value.trim().toLowerCase()
+    if(query === ""){
+        drawItems(products)
+        return
+    }
+    const filteredproductnames = products.filter(item => item.name.toLowerCase().includes(query))
+    if(filteredproductnames.length > 0){
+        drawItems(filteredproductnames)
+    } else {
+        allproducts.innerHTML = `<p class="text-center text-2xl ">No products found</p>`
+    }
+}
+if(chooseCategory.value.trim().toLowerCase() === "search by product name"){
+    searchButton.addEventListener("click" , choosingbyName)
+}
+
+
+
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
 
