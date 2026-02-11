@@ -63,6 +63,7 @@ let hidecomputercart = ()=>{
         }) ()
     }
 }
+hidecomputercart()
 window.addEventListener("resize" , hidecomputercart)
 
 textLogOutphone.addEventListener("click" , ()=>{
@@ -94,56 +95,56 @@ let products = [
     
     {
         id : "product1",
-        name : "coco gold perfume", 
+        name : "coco gold", 
         image : "url(images/4.jpg)",
         category : "brown" , 
         price : 100
     },
     {
         id : "product2",
-        name : "zara blue perfume" , 
+        name : "zara blue" , 
         image : "url(images/5.jpg)",
         category : "blue" , 
         price : 100
     },
     {
         id : "product3",
-        name : "lare gold perfume" ,
+        name : "lare gold" ,
         image : "url(images/6.jpg)", 
         category : "gold" , 
         price : 100
     },
     {
         id : "product4",
-        name : "varsace perfume" , 
+        name : "varsace" , 
         image : "url(images/7.jpg)",
         category : "blue" , 
         price : 100
     },
     {
         id : "product5",
-        name : "coco yellow perfume" , 
+        name : "coco yellow" , 
         image : "url(images/8.jpg)",
         category : "gold" , 
         price : 100
     },
     {
         id : "product6",
-        name : "CoCo black perfume ", 
+        name : "CoCo black", 
         image : "url(images/9.jpg)",
         category : "black" , 
         price : 100
     },
     {
         id : "product7",
-        name : "Allure perfume" , 
+        name : "Allure" , 
         image : "url(images/10.jpg)",
         category : "blue" , 
         price : 100
     },
     {
         id : "product8",
-        name : "valantenu perfume" , 
+        name : "valantenu" , 
         image : "url(images/11.jpg)",
         category : "red" , 
         price : 100
@@ -167,7 +168,7 @@ let drawItems = function(theThing){
                             <p class="text-xl opacity-60">category :${item.category}</p>
                         </h1>
                         <div class="rounded-full h-[120px] w-[120px] border-2 border-pink-500 mx-auto text-center text-3xl py-[40px] ">${item.price} $</div>
-                        <button class="bg-cyan-600 hover:bg-red-600 w-[180px] text-center rounded-[10px] h-[30px] text-xl fontinput text-white addButton">Add to Cart </button>
+                        <button class="bg-cyan-600 hover:bg-red-600 w-[180px] text-center rounded-[10px] h-[30px] text-xl fontinput text-white addButton" data-product-id="${item.id}">Add to Cart </button>
                     </div>
                 </div>
             </div>
@@ -179,18 +180,6 @@ let drawItems = function(theThing){
 
 
 
-let allClickButtons = document.querySelectorAll(".addButton")
-let counterCart  = document.querySelectorAll(".counter-cart")
-let counterForCart = 0 ;
-let clickaddButton = function(){
-    counterForCart +=1
-    counterCart.forEach(item =>{
-        item.textContent = counterForCart
-    })
-}
-allClickButtons.forEach(item =>{
-   item.addEventListener("click" , clickaddButton)
-})
 
 
 
@@ -236,6 +225,49 @@ let searchingproducts = function(){
 searchButton.addEventListener("click" , searchingproducts)
 
 
+let counterCart  = document.querySelectorAll(".counter-cart")
+let counterForCart = 0 ;
+let addedprducts = document.querySelectorAll(".addedprducts")  // Changed to querySelectorAll to get ALL carts
+
+// Use event delegation on the parent container
+allproducts.addEventListener("click", function(e){
+    
+    if(e.target.classList.contains("addButton")){
+        
+        // Get the product ID from data attribute
+        const productId = e.target.getAttribute("data-product-id");
+        
+        // Find the product in the array
+        const product = products.find(item => item.id === productId);
+        
+        if(product) {
+            
+            // Create the product HTML
+            const productHTML = `<div class="h-[170px] w-full bg-neutral-400 opacity-90 mb-[17px]  px-[15px] py-[15px] flex flex-col justify-between">
+                        <div class="flex justify-around">
+                            <p class="text-2xl text-black  ">${product.name} <br> perfume</p>
+                            <p class="text-2xl">price : <br>${product.price}</p>
+                        </div>
+                        <div class="flex justify-start mb-[10px]">
+                            <div class="h-[45px] w-[45px] border-[1px] hover:bg-blue-500 text-center py-[5px] text-2xl ml-[10px]">+</div>
+                            <div class="h-[45px] w-[45px] border-[1px] hover:bg-red-500 text-center py-[5px] text-2xl ml-[10px]">-</div>
+                        </div>
+                    </div>`;
+            
+            // Add to cart - add to ALL carts (phone and desktop)
+            addedprducts.forEach(cart => {
+                cart.innerHTML += productHTML;
+            });
+            
+            // Update counter
+            counterForCart += 1;
+            counterCart.forEach(item => {
+                item.textContent = counterForCart;
+            });
+        }
+    }
+})
+// the e.target   this indicates to the element that had been clicked
 
 
 
