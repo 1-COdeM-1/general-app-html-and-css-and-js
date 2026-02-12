@@ -228,35 +228,55 @@ searchButton.addEventListener("click" , searchingproducts)
 let counterCart  = document.querySelectorAll(".counter-cart")
 let counterForCart = 0 ;
 let addedprducts = document.querySelectorAll(".addedprducts")  // Changed to querySelectorAll to get ALL carts
+// persistent array to collect HTML for all clicked products
+let collectionsofclickdiproducts = []
+let numberoftheproduct =1
 
 // Use event delegation on the parent container
+
+// the e.target   this indicates to the element that had been clicked
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 allproducts.addEventListener("click", function(e){
-    
-    if(e.target.classList.contains("addButton")){
+    if(localStorage.getItem("username")===""){
+        location.assign("log-in.html")
+    }
+    else if(e.target.classList.contains("addButton")){
+        // (function addedprductsbutton (){
+        //     e.target.style.backgroundColor = "red"
+        //     e.target.style.color = "white"
+        //     e.target.textContent = "added to cart "
+        // }) ()
         
-        // Get the product ID from data attribute
         const productId = e.target.getAttribute("data-product-id");
         
-        // Find the product in the array
-        const product = products.find(item => item.id === productId);
+        
+        const product = products.filter(item => item.id === productId);
         
         if(product) {
-            
-            // Create the product HTML
-            const productHTML = `<div class="h-[170px] w-full bg-neutral-400 opacity-90 mb-[17px]  px-[15px] py-[15px] flex flex-col justify-between">
+         let producthtml = product.map((item)=>{
+            return `<div class="h-[170px] w-full bg-neutral-400 opacity-90 mb-[17px]  px-[15px] py-[15px] flex flex-col justify-between">
                         <div class="flex justify-around">
-                            <p class="text-2xl text-black  ">${product.name} <br> perfume</p>
-                            <p class="text-2xl">price : <br>${product.price}</p>
+                            <p class="text-2xl text-black  ">${item.name} <br> perfume</p>
+                            <p class="text-2xl">price : <br>${item.price}</p>
                         </div>
                         <div class="flex justify-start mb-[10px]">
-                            <div class="h-[45px] w-[45px] border-[1px] hover:bg-blue-500 text-center py-[5px] text-2xl ml-[10px]">+</div>
-                            <div class="h-[45px] w-[45px] border-[1px] hover:bg-red-500 text-center py-[5px] text-2xl ml-[10px]">-</div>
+                            <div class="h-[45px] w-[45px] border-[1px] hover:bg-blue-500 text-center py-[5px] text-2xl ml-[10px] +" onClick="addonetonumProducts()">+</div>
+                            <div class = "text-3xl text-center px-[3px] py-[3px] numofProduct"></div>
+                            <div class="h-[45px] w-[45px] border-[1px] hover:bg-red-500 text-center py-[5px] text-2xl ml-[10px] -" onClick="minusonetonumProducts()">-</div>
                         </div>
                     </div>`;
+         })
+            
+            collectionsofclickdiproducts.push(...producthtml)
+
+            const nonrepeatedProducts = [...new Set(collectionsofclickdiproducts)];
             
             // Add to cart - add to ALL carts (phone and desktop)
             addedprducts.forEach(cart => {
-                cart.innerHTML += productHTML;
+                cart.innerHTML = nonrepeatedProducts.join("");
             });
             
             // Update counter
@@ -267,11 +287,6 @@ allproducts.addEventListener("click", function(e){
         }
     }
 })
-// the e.target   this indicates to the element that had been clicked
-
-
-
-/////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 tailwind.config = {
