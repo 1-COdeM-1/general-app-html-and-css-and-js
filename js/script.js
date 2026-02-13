@@ -263,9 +263,9 @@ allproducts.addEventListener("click", function(e){
                             <p class="text-2xl">price : <br>${item.price}</p>
                         </div>
                         <div class="flex justify-start mb-[10px]">
-                            <div class="h-[45px] w-[45px] border-[1px] hover:bg-blue-500 text-center py-[5px] text-2xl ml-[10px] +" onClick="addonetonumProducts()">+</div>
-                            <div class = "text-3xl text-center px-[3px] py-[3px] numofProduct"></div>
-                            <div class="h-[45px] w-[45px] border-[1px] hover:bg-red-500 text-center py-[5px] text-2xl ml-[10px] -" onClick="minusonetonumProducts()">-</div>
+                            <div class="h-[45px] w-[45px] border-[1px] hover:bg-blue-500 text-center py-[5px] text-2xl ml-[10px] +">+</div>
+                            <div class = "text-3xl text-center px-[3px] py-[3px] numofProduct">1</div>
+                            <div class="h-[45px] w-[45px] border-[1px] hover:bg-red-500 text-center py-[5px] text-2xl ml-[10px] -">-</div>
                         </div>
                     </div>`;
          })
@@ -277,6 +277,26 @@ allproducts.addEventListener("click", function(e){
             // Add to cart - add to ALL carts (phone and desktop)
             addedprducts.forEach(cart => {
                 cart.innerHTML = nonrepeatedProducts.join("");
+                
+                // Add event listeners to the actual DOM elements
+                cart.addEventListener("click", function(e) {
+                    if(e.target.classList.contains("+")) {
+                        const numofProductforplus = e.target.nextElementSibling;
+                        numofProductforplus.textContent = parseInt(numofProductforplus.textContent) + 1;
+                    }
+                    else if(e.target.classList.contains("-")) {
+                        const numofProductforminus = e.target.previousElementSibling;
+                        let current = parseInt(numofProductforminus.textContent);
+                        if(current > 1) numofProductforminus.textContent = current - 1;
+                        else if(current ===1){
+                            numofProductforminus.textContent =0
+                            numofProductforminus.parentElement.parentElement.style.display = "none"
+                        }
+                    }
+                    
+                }
+            
+            );
             });
             
             // Update counter
@@ -289,6 +309,11 @@ allproducts.addEventListener("click", function(e){
 })
 
 
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////
 tailwind.config = {
   theme: {
     extend : {
